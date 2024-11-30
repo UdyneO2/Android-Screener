@@ -27,9 +27,8 @@ jobs:
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
-        path: app/build/outputs/apk/
         files: |
-          /*.apk
+          app/build/outputs/apk/*
         name: Screener
         tag_name: ${{ github.run_id }}
         body: |
