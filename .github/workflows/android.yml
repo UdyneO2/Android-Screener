@@ -28,14 +28,15 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          app/build/outputs/apk/*
+          app/build/outputs/apk/debug/*.apk
+          app/build/outputs/apk/*.apk
         name: Screener
         tag_name: ${{ github.run_id }}
         body: |
           Release debug
         
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Screener
         path: app/build/outputs/apk/
